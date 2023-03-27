@@ -18,6 +18,7 @@
 
 ```
   git@github.com:A-V-tor/test-task-flask-mongodb.git
+  cd test-task-flask-mongodb
 ```
 
 <h3>1. Запуск через docker</h3>
@@ -42,6 +43,7 @@
 
 ```
   brew services start mongodb-community@6.0
+  gunicorn -w 3 -b 0.0.0.0:5000 app:app 
 ```
 
 <h3>3. Url адресса</h3>
@@ -52,7 +54,7 @@
   http://127.0.0.1:5000  
 ```
 
-или для docker
+или
 
 ```
   http://0.0.0.0:5000
@@ -64,7 +66,7 @@
   http://127.0.0.1:5000/swagger-ui 
 ```
 
-или для docker
+или
 
 ```
   http://0.0.0.0:5000/swagger-ui/
