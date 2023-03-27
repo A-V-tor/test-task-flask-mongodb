@@ -39,6 +39,24 @@
   # client = MongoClient(host='test_mongodb')
 
 ```
+<h4> Создать виртуальное окружение и установить зависимости</h4>
+
+```
+    python3 -m venv venv
+    source venv/bin/activate
+    
+```
+`python3 -m pip install -r requirements.txt` </br> </br>
+Или в случае использования <b>poetry</b>
+
+
+```
+    poetry shell
+    
+```
+
+`poetry install`
+</br></br>
 <i>Пример запуска mongodb через brew</i>
 
 ```
