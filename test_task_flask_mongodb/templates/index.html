@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+        .todo {
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тестовое задание</h1>
+    <hr>
+    <div class="content">
+    <form method="post">
+        <p>
+            <b><label for="content">Добавить пользователя</label></b>
+        </p>
+        <p>
+            <input type="text" name="name"
+                placeholder="имя"></input>
+        </p>
+        <p>
+            <input type="password" name="psw"
+                placeholder="пароль"></input>
+        </p>
+
+        <button type="submit">Отправить</button>
+    </form>
+    </div>
+    <hr>
+    {% for todo in todos %}
+        <div class="todo">
+            <p>id: {{todo['_id']}}</br> имя: {{ todo['name'] }}</br> <i>пароль: {{ todo['password']}}</i></p>
+            <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}" >
+                <input type="submit" value="Delete Todo"
+                       onclick="return confirm('Удалить пользователя из базы данных?')">
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>

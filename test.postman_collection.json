@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "65593b27-6f46-4095-8f47-5bebe480afb2",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24959643"
+	},
+	"item": [
+		{
+			"name": "get-users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.3 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 15:52:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1165"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": {\n            \"$oid\": \"641b1d541a1cd8ef87a86cdc\"\n        },\n        \"name\": \"test-user\",\n        \"password\": \"123456\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"641b2306d04d0ea905a67f7f\"\n        },\n        \"name\": \"admin\",\n        \"password\": \"admin\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"641ca62443a07b88d41080fd\"\n        },\n        \"name\": \"qwe\",\n        \"password\": \"ewrwe\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"641caf50789b4805efd0c727\"\n        },\n        \"name\": \"user\",\n        \"password\": \"9999999\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"64204c04620a294d09f6b179\"\n        },\n        \"name\": \"asdfghjkl\",\n        \"password\": \"0000000\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"64204c6d620a294d09f6b17a\"\n        },\n        \"name\": \"тест юзер\",\n        \"password\": \"пароль\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"642066291978babd0e6060b9\"\n        },\n        \"name\": \"Валера\",\n        \"password\": \"1234рке\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"6420667e1978babd0e6060bb\"\n        },\n        \"name\": \"тест юзер\",\n        \"password\": \"пароль\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"642066eb1978babd0e6060bd\"\n        },\n        \"name\": \"тест юзер\",\n        \"password\": \"тест пароль\"\n    },\n    {\n        \"_id\": {\n            \"$oid\": \"642067f11978babd0e6060be\"\n        },\n        \"name\": \"тест юзер\",\n        \"password\": \"пароль\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "user-add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"тест юзер\",\n    \"psw\": \"тест пароль\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/add-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add-user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user-add",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"тест юзер\",\n    \"psw\": \"тест пароль\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/add-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"add-user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.3 Python/3.11.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 15:52:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"user added\"\n}"
+				}
+			]
+		}
+	]
+}

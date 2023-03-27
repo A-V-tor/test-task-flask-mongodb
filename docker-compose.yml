@@ -1,0 +1,19 @@
+version: "4"
+services:
+  app:
+    build: .
+    command: gunicorn -w 3 -b 0.0.0.0:5000 app:app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    links:
+      - db
+  db:
+    image: mongo:latest
+    hostname: test_mongodb
+    ports:
+      - "27017:27017"
+
+  
+   
